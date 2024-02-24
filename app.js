@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-
+const port = 3001;
+const cors = require('cors');
 // Define a simple route
-app.get('/api/hello', (req, res) => {
+// Enable CORS for all routes
+app.use(cors());
+app.get('/api/teslacars', (req, res) => {
   res.json({ status: 'Success',body: [
     {
       name: "Tesla Model 3",
